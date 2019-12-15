@@ -2,6 +2,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.asserts.IAssert;
 
 public class BasePage{
 
@@ -23,14 +24,21 @@ public class BasePage{
         return this;
     }
 
+
+
     //Click Method
-    public void click (By elementBy) {
+    public void clickElement (By elementBy) {
         driver.findElement(elementBy).click();
     }
+
 
     //Assert//
     public void AssertEqualURLs(String currentUrl, String expectedURL) {
         Assert.assertEquals(currentUrl, expectedURL);
     }
+
+    public void AssertNotEqualURLs(String currentUrl, String expectedURL) {
+        Assert.assertNotEquals(currentUrl, expectedURL);
+        }
 
 }

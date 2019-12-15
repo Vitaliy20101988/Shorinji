@@ -9,7 +9,8 @@ public HomePage(WebDriver driver){
 }
 
 
-      public String [] HomePageURLs = {
+
+        private String [] HomePageURLs = {
         "http://shorinji-kempo.org.ua",                             //0
         "http://shorinji-kempo.org.ua/index.php/shorinjikempo",    //1
         "http://shorinji-kempo.org.ua/index.php/historysk",       //2
@@ -30,82 +31,41 @@ public HomePage(WebDriver driver){
 };
 
 
+                //GETTERS//
+    public String getHomePageURL (int i){
+        return HomePageURLs[i];
+    }
+
+
 
 
       //LEFT MENU//
+private By LeftMenuBtn [] = {
+              By.cssSelector(".item-25 > a"),     //0
+              By.cssSelector(".item-29 > a"),      //1
+              By.linkText("Учебная программа"),     //2
+              By.linkText("Расписание"),            //3
+              By.linkText("Медитация"),             //4
+              By.linkText("Наши Учителя"),          //5
+              By.linkText("Рассказы Учителей"),     //6
+              By.linkText("Впечатления о..."),      //7
+              By.linkText("Вопросы и Ответы"),      //8
+              By.linkText("Техника"),               //9
+              By.linkText("Философия Кайсо"),       //10
+              By.linkText("Конго Дзэн"),            //11
+              By.linkText("Буддизм"),               //12
+              By.linkText("Хаппё"),                 //13
+              By.linkText("Магазин"),               //14
+              By.linkText("Перечень платежей")      //15
+    };
 
-By ShorinjiKempo = By.cssSelector(".item-25 > a");
-By HistoryShorinji = By.cssSelector(".item-29 > a");
-By Programm = By.linkText("Учебная программа");
-By Schedule = By.linkText("Расписание");
-By Meditation = By.linkText("Медитация");
-By OurTeachers = By.linkText("Наши Учителя");
-By Tales = By.linkText("Рассказы Учителей");
-By Impressions = By.linkText("Впечатления о...");
-By QuestionsAndAnswers = By.linkText("Вопросы и Ответы");
-By Tehnika = By.linkText("Техника");
-By FilosofiyaKaiso = By.linkText("Философия Кайсо");
-By Kongozen = By.linkText("Конго Дзэн");
-By Buddizm = By.linkText("Буддизм");
-By Happyo = By.linkText("Хаппё");
-By Shop = By.linkText("Магазин");
-By Payments = By.linkText("Перечень платежей");
 
-
-    public HomePage verifyHistoryLink (){
-        click(HistoryShorinji);
-        AssertEqualURLs(driver.getCurrentUrl(), HomePageURLs[2]);
-        return this;
+    public By getLeftMenuBtn (int i){
+        return LeftMenuBtn[i];
     }
 
 
-    public HomePage verifyShorinjiLink (){
-        click(ShorinjiKempo);
-        AssertEqualURLs(driver.getCurrentUrl(), HomePageURLs[1]);
-        return this;
-    }
 
-     public HomePage verifyProgrammLink(){
-        click(Programm);
-        AssertEqualURLs(driver.getCurrentUrl(), HomePageURLs[3]);
-        return this;
-     }
-
-     public HomePage verifySceduleLink(){
-        click(Schedule);
-        AssertEqualURLs(driver.getCurrentUrl(), HomePageURLs[4]);
-        return this;
-     }
-
-     public HomePage verifyMeditationLink(){
-        click(Meditation);
-        AssertEqualURLs(driver.getCurrentUrl(), HomePageURLs[5]);
-        return this;
-     }
-
-     public HomePage verifyOurTeachersLink(){
-        click(OurTeachers);
-        AssertEqualURLs(driver.getCurrentUrl(), HomePageURLs[6]);
-        return this;
-     }
-
-     public HomePage verifyTalesLink(){
-        click(Tales);
-        AssertEqualURLs(driver.getCurrentUrl(), HomePageURLs[7]);
-        return this;
-     }
-
-     public HomePage verifyImpressionsLink(){
-        click(Impressions);
-        AssertEqualURLs(driver.getCurrentUrl(), HomePageURLs[8]);
-        return this;
-     }
-
-     public HomePage verifyQuestionsAndAnswersLink(){
-        click(QuestionsAndAnswers);
-        AssertEqualURLs(driver.getCurrentUrl(), HomePageURLs[9]);
-        return this;
-     }
 
 
 
