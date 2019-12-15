@@ -7,7 +7,7 @@ public class BaseTest {
 
 
     public WebDriver driver;
-    static String url_Setup = "http://shorinji-kempo.org.ua";
+    static String baseURL = "http://shorinji-kempo.org.ua";
 
 
     @BeforeMethod
@@ -15,9 +15,9 @@ public class BaseTest {
     public void setup(){
 
         System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.get(url_Setup);
+        driver.get(baseURL);
     }
 
 
