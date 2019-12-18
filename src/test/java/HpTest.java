@@ -1,15 +1,23 @@
-import com.sun.deploy.security.SelectableSecurityManager;
 import org.openqa.selenium.By;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class HpTest extends BaseTest {
 
 
-    @Test
-    public void verifyHistoryLink() {
+    @Test (description = "Open pages from Left Menu", dataProvider = "leftMenu")
+    public void verifyHistoryLink(By history, String historyURL) {
         HomePage homePage = new HomePage(driver);
-        homePage.clickElement(homePage.getLeftMenuBtn(1));
-        homePage.AssertEqualURLs(driver.getCurrentUrl(), homePage.getHomePageURL(2));
+        homePage.clickElement(history);
+        homePage.AssertEqualURLs(driver.getCurrentUrl(), historyURL);
+    }
+
+    @DataProvider(name = "leftMenu")
+    public Object[][] leftMenuData()   {
+        HomePage homePage = new HomePage(driver);
+        return new Object[][]{
+          {homePage.getLeftMenuBtn(0), homePage.getHomePageURL(1)}
+        };
     }
 
 
@@ -52,36 +60,29 @@ public class HpTest extends BaseTest {
     @Test
     public void verifyTalesLink(){
         HomePage homePage = new HomePage(driver);
-        homePage.clickElement(homePage.getLeftMenuBtn(7));
+        homePage.clickElement(homePage.getLeftMenuBtn(6));
         homePage.AssertEqualURLs(driver.getCurrentUrl(), homePage.getHomePageURL(7));
     }
 
     @Test
     public void verifyImpressionsLink(){
         HomePage homePage = new HomePage(driver);
-        homePage.clickElement(homePage.getLeftMenuBtn(8));
+        homePage.clickElement(homePage.getLeftMenuBtn(7));
         homePage.AssertEqualURLs(driver.getCurrentUrl(), homePage.getHomePageURL(8));
     }
 
     @Test
     public void verifyQuestionsAndAnswersLink(){
         HomePage homePage = new HomePage(driver);
-        homePage.clickElement(homePage.getLeftMenuBtn(9));
+        homePage.clickElement(homePage.getLeftMenuBtn(8));
         homePage.AssertEqualURLs(driver.getCurrentUrl(), homePage.getHomePageURL(9));
     }
 
 
     //Negative cases//
 
-    @Test
-    public void elementIsNotClickeble(By leftMenuBtn){
-        HomePage homePage = new HomePage(driver);
-        boolean displayed = driver.findElement(homePage.getLeftMenuBtn(1)).isDisplayed();
-        boolean enabled = driver.findElement(homePage.getLeftMenuBtn(1)).isEnabled();
-       if (!displayed & !enabled) {
-           assert true;
-        }
-       else assert false;
+
+
     }
 
-}
+
