@@ -18,6 +18,10 @@ public class BasePage{
 
     }
 
+    public BasePage() {
+    }
+
+
     //Open Home Page//
     public BasePage goToSK (){
         driver.get(baseURL);
@@ -37,8 +41,8 @@ public class BasePage{
         Assert.assertEquals(currentUrl, expectedURL);
     }
 
-    public void AssertNotEqualURLs(String currentUrl, String expectedURL) {
-        Assert.assertNotEquals(currentUrl, expectedURL);
-        }
+   // public void AssertNotEqualURLs(String currentUrl, String expectedURL) {
+     //   Assert.assertNotEquals(currentUrl, expectedURL);
+       // }
 
 }
