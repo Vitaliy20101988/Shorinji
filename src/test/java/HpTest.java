@@ -17,7 +17,8 @@ public class HpTest extends BaseTest {
     @DataProvider(name = "UnautorizedLeftMenu")
     public static Object[][] leftMenuData() {
         return new Object[][]{
-        {HomePage.getBtnHashMap().get("HistoryBtn"), HomePage.getURLsMap().get("HistoryURL")}
+                {HomePage.getBtnHashMap().get("HistoryBtn"), HomePage.getURLsMap().get("HistoryURL")},
+                {HomePage.getBtnHashMap().get("LearningProgrammBtn"), HomePage.getURLsMap().get("LearningProgrammURL")},
           //{HomePage.getBtnHashMap().get("HistoryBtn"), HomePage.getURLsMap().get("HistoryURL")},
          // {hpBtnsMap.get("ShorinjiKempoBtn"), hpBtnsMap.get("ShorinjiKempoURL")},
         };

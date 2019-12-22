@@ -11,11 +11,11 @@ public class HomePage extends BasePage {
     }
 
 
-   private Map<String, String> URLsMap = Map.ofEntries (
+   private static Map<String, String> URLsMap = Map.ofEntries (
            entry("baseUrl", "http://shorinji-kempo.org.ua"),
            entry("ShorinjiKempoURL", "http://shorinji-kempo.org.ua/index.php/shorinjikempo"),
            entry("HistoryURL", "http://shorinji-kempo.org.ua/index.php/historysk"),
-           entry("UchebnazProgrammaURL", "http://shorinji-kempo.org.ua/index.php/uchebnaya-programma"),
+           entry("LearningProgrammURL", "http://shorinji-kempo.org.ua/index.php/uchebnaya-programma"),
            entry("RaspisanieTrenirovokURL", "http://shorinji-kempo.org.ua/index.php/raspisanie-trenirovok"),
            entry("MeditationURL", "http://shorinji-kempo.org.ua/index.php/meditation"),
            entry("NashiUchitelyaURL", "http://shorinji-kempo.org.ua/index.php/nashiuchitelya"),
@@ -32,15 +32,15 @@ public class HomePage extends BasePage {
    );
 
          public static Map<String, String> getURLsMap() {
-             return getURLsMap();
+             return URLsMap;
         }
 
 
 
-    public Map<String, By> BTNsMap = Map.ofEntries (
+    public static Map<String, By> BTNsMap = Map.ofEntries (
             entry("ShorinjiKempoBtn", By.cssSelector(".item-25 > a")),
             entry("HistoryBtn", By.cssSelector(".item-29 > a")),
-            entry("UchebnayaProgrammaBtn", By.linkText("Учебная программа")),
+            entry("LearningProgrammBtn", By.linkText("Учебная программа")),
             entry("RaspisanieBtn", By.linkText("Расписание")),
             entry("MeditationBtn", By.linkText("Медитация")),
             entry("NashiUchitelyaBtn", By.linkText("Наши Учителя")),
@@ -58,7 +58,7 @@ public class HomePage extends BasePage {
 
 
              public static Map<String, By> getBtnHashMap() {
-                 return BTNsMap();
+                 return BTNsMap;
              }
 }
 
