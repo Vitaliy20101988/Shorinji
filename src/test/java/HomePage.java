@@ -11,9 +11,9 @@ public class HomePage extends BasePage {
     }
 
 
-   private static Map<String, String> URLsMap = Map.ofEntries (
-           static entry("baseUrl", "http://shorinji-kempo.org.ua"),
-           static entry("ShorinjiKempoURL", "http://shorinji-kempo.org.ua/index.php/shorinjikempo"),
+   public static Map<String, String> URLsMap = Map.ofEntries (
+           entry("baseUrl", "http://shorinji-kempo.org.ua"),
+           entry("ShorinjiKempoURL", "http://shorinji-kempo.org.ua/index.php/shorinjikempo"),
            entry("HistoryURL", "http://shorinji-kempo.org.ua/index.php/historysk"),
            entry("LearningProgrammURL", "http://shorinji-kempo.org.ua/index.php/uchebnaya-programma"),
            entry("ScheduleOfTrainingsURL", "http://shorinji-kempo.org.ua/index.php/raspisanie-trenirovok"),
@@ -36,28 +36,27 @@ public class HomePage extends BasePage {
         }
 
 
-
-    public static Map<String, By> BTNsMap = Map.ofEntries (
-            entry("ShorinjiKempoBtn", By.cssSelector(".item-25 > a")),
-            entry("HistoryBtn", By.cssSelector(".item-29 > a")),
-            entry("LearningProgrammBtn", By.linkText("Учебная программа")),
-            entry("ScheduleOfTrainingsBtn", By.linkText("Расписание")),
-            entry("MeditationBtn", By.linkText("Медитация")),
-            entry("OurTeachersBtn", By.linkText("Наши Учителя")),
-            entry("TeachersTalesBtn", By.linkText("Рассказы Учителей")),
-            entry("ImpressonsBtn", By.linkText("Впечатления о...")),
-            entry("QuestionsAndAnswersBtn", By.linkText("Вопросы и Ответы")),
-            entry("TechnikaBtn", By.linkText("Техника")),
-            entry("FilosofiyaKaisoBtn", By.linkText("Философия Кайсо")),
-            entry("KongoZenBtn", By.linkText("Конго Дзэн")),
-            entry("BuddizmBtn", By.linkText("Буддизм")),
-            entry("HappyoBtn", By.linkText("Хаппё")),
-            entry("ShopBtn", By.linkText("Магазин")),
-            entry("PaymentsBtn", By.linkText("Перечень платежей"))
+        public static Map<String, By> BTNsMap = Map.ofEntries (
+                entry("ShorinjiKempoBtn", By.cssSelector(".item-25 > a")),
+                entry("HistoryBtn", By.cssSelector(".item-29 > a")),
+                entry("LearningProgrammBtn", By.linkText("Учебная программа")),
+                entry("ScheduleOfTrainingsBtn", By.linkText("Расписание")),
+                entry("MeditationBtn", By.linkText("Медитация")),
+                entry("OurTeachersBtn", By.linkText("Наши Учителя")),
+                entry("TeachersTalesBtn", By.linkText("Рассказы Учителей")),
+                entry("ImpressonsBtn", By.linkText("Впечатления о...")),
+                entry("QuestionsAndAnswersBtn", By.linkText("Вопросы и Ответы")),
+                entry("TechnikaBtn", By.linkText("Техника")),
+                entry("FilosofiyaKaisoBtn", By.linkText("Философия Кайсо")),
+                entry("KongoZenBtn", By.linkText("Конго Дзэн")),
+                entry("BuddizmBtn", By.linkText("Буддизм")),
+                entry("HappyoBtn", By.linkText("Хаппё")),
+                entry("ShopBtn", By.linkText("Магазин")),
+                entry("PaymentsBtn", By.linkText("Перечень платежей"))
     );
 
 
-             public static Map<String, By> getBtnHashMap() {
+             public static Map<String, By> getBtnMap() {
                  return BTNsMap;
              }
 }

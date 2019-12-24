@@ -16,14 +16,15 @@ public class HpTest extends BaseTest {
     @DataProvider(name = "UnautorizedLeftMenu")
     public static Object[][] leftMenuData() {
         return new Object[][]{
-                {HomePage.getBtnHashMap().get("HistoryBtn"), HomePage.getURLsMap().get("HistoryURL")},
-                {HomePage.getBtnHashMap().get("LearningProgrammBtn"), HomePage.getURLsMap().get("LearningProgrammURL")},
-                {HomePage.getBtnHashMap().get("ScheduleOfTrainingsBtn"), HomePage.getURLsMap().get("ScheduleOfTrainingsURL")},
-                {HomePage.getBtnHashMap().get("MeditationBtn"), HomePage.getURLsMap().get("MeditationURL")},
-                {HomePage.getBtnHashMap().get("OurTeachersBtn"), HomePage.getURLsMap().get("OurTeachersURL")},
-                {HomePage.getBtnHashMap().get("TeachersTalesBtn"), HomePage.getURLsMap().get("TeachersTalesURL")},
-                {HomePage.getBtnHashMap().get("ImpressonsBtn"), HomePage.getURLsMap().get("ImpressonsOURL")},
-                {HomePage.getBtnHashMap().get("QuestionsAndAnswersBtn"), HomePage.getURLsMap().get("QuestionsAndAnswersURL")}
+
+             {HomePage.getBtnMap().get("HistoryBtn"), HomePage.getURLsMap().get("HistoryURL")},
+             {HomePage.getBtnMap().get("LearningProgrammBtn"), HomePage.getURLsMap().get("LearningProgrammURL")},
+             {HomePage.getBtnMap().get("ScheduleOfTrainingsBtn"), HomePage.getURLsMap().get("ScheduleOfTrainingsURL")},
+             {HomePage.getBtnMap().get("MeditationBtn"), HomePage.getURLsMap().get("MeditationURL")},
+             {HomePage.getBtnMap().get("OurTeachersBtn"), HomePage.getURLsMap().get("OurTeachersURL")},
+             {HomePage.getBtnMap().get("TeachersTalesBtn"), HomePage.getURLsMap().get("TeachersTalesURL")},
+             {HomePage.getBtnMap().get("ImpressonsBtn"), HomePage.getURLsMap().get("ImpressonsOURL")},
+             {HomePage.getBtnMap().get("QuestionsAndAnswersBtn"), HomePage.getURLsMap().get("QuestionsAndAnswersURL")}
         };
     }
 
