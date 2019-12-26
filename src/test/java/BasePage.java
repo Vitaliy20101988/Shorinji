@@ -2,7 +2,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.asserts.IAssert;
 
 public class BasePage{
 
@@ -35,6 +34,10 @@ public class BasePage{
         driver.findElement(elementBy).click();
     }
 
+    //Send Keys
+    public void sendKeys(By elementBy, String text){
+        driver.findElement (elementBy).sendKeys(text);
+    }
 
     //Assert//
     public void AssertEqualURLs(String currentUrl, String expectedURL) {
