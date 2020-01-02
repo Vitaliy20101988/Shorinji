@@ -55,12 +55,7 @@ public class HpTest extends BaseTest {
        homePage.sendKeys(homePage.getLoginField(), UserData.getName());
        homePage.sendKeys(homePage.getPassField(), UserData.getPassword());
        homePage.clickElement(homePage.getBtnMap().get("EnterBtn"));
-
-
-
-    //    driver.findElement(By.id("modlgn-username")).sendKeys("Виталик");
-    //    driver.findElement(By.id("modlgn-passwd")).sendKeys("20101988");
-    //    driver.findElement(By.name("Submit")).click();
+       
     }
 
 
