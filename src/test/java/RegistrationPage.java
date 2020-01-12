@@ -6,6 +6,7 @@ import static java.util.Map.*;
 public class RegistrationPage extends BasePage {
 
     public static Map<String, By> BTNsRegistration = Map.ofEntries(
+        //    entry("RegistrationBTN", By.id("form-login-register")),
             entry("AccessRegBTN", By.cssSelector(".cbRegistrationSubmit"))
     );
     public static Map<String, By> getBTNsRegistration(){ return BTNsRegistration;}

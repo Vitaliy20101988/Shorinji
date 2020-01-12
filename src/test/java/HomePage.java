@@ -12,29 +12,29 @@ public class HomePage extends BasePage {
 
 
    public static Map<String, String> URLsMap = Map.ofEntries (
-           entry("ShorinjiKempoURL", "http://shorinji-kempo.org.ua/index.php/shorinjikempo"),
-           entry("HistoryURL", "http://shorinji-kempo.org.ua/index.php/historysk"),
-           entry("LearningProgrammURL", "http://shorinji-kempo.org.ua/index.php/uchebnaya-programma"),
-           entry("ScheduleOfTrainingsURL", "http://shorinji-kempo.org.ua/index.php/raspisanie-trenirovok"),
-           entry("MeditationURL", "http://shorinji-kempo.org.ua/index.php/meditation"),
-           entry("OurTeachersURL", "http://shorinji-kempo.org.ua/index.php/nashiuchitelya"),
-           entry("TeachersTalesURL", "http://shorinji-kempo.org.ua/index.php/rasskazy-uchiteley"),
-           entry("ImpressionsURL", "http://shorinji-kempo.org.ua/index.php/vpechatleniya"),
-           entry("QuestionsAndAnswersURL", "http://shorinji-kempo.org.ua/index.php/faq"),
-           entry("TechnikURL", "http://shorinji-kempo.org.ua/index.php/tehnika"),
-           entry("FilosofiyaKaisoURL", "http://shorinji-kempo.org.ua/index.php/filosofiyakaiso"),
-           entry("VerouchenieKongoZenURL", "http://shorinji-kempo.org.ua/index.php/verouchenie-kongozen"),
-           entry("BuddizmURL", "http://shorinji-kempo.org.ua/index.php/buddhism"),
-           entry("HappyoURL", "http://shorinji-kempo.org.ua/index.php/happyo"),
-           entry("ShopURL", "http://shorinji-kempo.org.ua/index.php/shopsk"),
-           entry("PaymentsURL", "http://shorinji-kempo.org.ua/index.php/list-of-fees"),
-           entry("MainURL", "http://shorinji-kempo.org.ua/index.php"),
-           entry("NewsURL", "http://shorinji-kempo.org.ua/index.php/news"),
-           entry("FederationURL", "http://shorinji-kempo.org.ua/index.php/federaciya"),
-           entry("BranchesURL", "http://shorinji-kempo.org.ua/index.php/branches"),
-           entry("CalendarURL", "http://shorinji-kempo.org.ua/index.php/calendar"),
-           entry("CharterURL", "http://shorinji-kempo.org.ua/index.php/statutes"),
-           entry("LinksURL", "http://shorinji-kempo.org.ua/index.php/links")
+           entry("ShorinjiKempoURL", "https://shorinji-kempo.org.ua/shorinjikempo"),
+           entry("HistoryURL", "https://shorinji-kempo.org.ua/historysk"),
+           entry("LearningProgrammURL", "https://shorinji-kempo.org.ua/uchebnaya-programma"),
+           entry("ScheduleOfTrainingsURL", "https://shorinji-kempo.org.ua/raspisanie-trenirovok"),
+           entry("MeditationURL", "https://shorinji-kempo.org.ua/meditation"),
+           entry("OurTeachersURL", "https://shorinji-kempo.org.ua/nashiuchitelya"),
+           entry("TeachersTalesURL", "https://shorinji-kempo.org.ua/rasskazy-uchiteley"),
+           entry("ImpressionsURL", "https://shorinji-kempo.org.ua/vpechatleniya"),
+           entry("QuestionsAndAnswersURL", "https://shorinji-kempo.org.ua/faq"),
+           entry("TechnikURL", "https://shorinji-kempo.org.ua/tehnika"),
+           entry("FilosofiyaKaisoURL", "https://shorinji-kempo.org.ua/filosofiyakaiso"),
+           entry("VerouchenieKongoZenURL", "https://shorinji-kempo.org.ua/verouchenie-kongozen"),
+           entry("BuddizmURL", "https://shorinji-kempo.org.ua/buddhism"),
+           entry("HappyoURL", "https://shorinji-kempo.org.ua/happyo"),
+           entry("ShopURL", "https://shorinji-kempo.org.ua/shopsk"),
+           entry("PaymentsURL", "https://shorinji-kempo.org.ua/list-of-fees"),
+           entry("MainURL", "https://shorinji-kempo.org.ua"),
+           entry("NewsURL", "https://shorinji-kempo.org.ua/news"),
+           entry("FederationURL", "https://shorinji-kempo.org.ua/federaciya"),
+           entry("BranchesURL", "https://shorinji-kempo.org.ua/branches"),
+           entry("CalendarURL", "https://shorinji-kempo.org.ua/calendar"),
+           entry("CharterURL", "https://shorinji-kempo.org.ua/statutes"),
+           entry("LinksURL", "https://shorinji-kempo.org.ua/links")
    );
 
          public static Map<String, String> getURLsMap() {
@@ -67,7 +67,7 @@ public class HomePage extends BasePage {
                 entry("CharterBtn", By.cssSelector(".item-23 > a")),
                 entry("LinksBtn", By.cssSelector(".item-24 > a")),
                 entry("EnterBtn", By.name("Submit")),
-                entry("RegistrationBTN", By.cssSelector(".cbRegistrationSubmit"))
+                entry("RegistrationBTN", By.cssSelector("#form-login-register > a"))
     );
 
          public static Map<String, By> getBtnMap() {

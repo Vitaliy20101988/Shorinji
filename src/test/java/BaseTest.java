@@ -8,7 +8,7 @@ public class BaseTest {
 
 
     public WebDriver driver;
-    static String baseURL = "http://shorinji-kempo.org.ua";
+    static String baseURL = "https://shorinji-kempo.org.ua";
 
 
     @BeforeMethod
@@ -22,8 +22,8 @@ public class BaseTest {
     }
 
 
-   @AfterMethod
-    public void teardown(){
-       driver.quit();
-    }
+//   @AfterMethod
+//    public void teardown(){
+//       driver.quit();
+//    }
 }

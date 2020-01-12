@@ -1,8 +1,10 @@
 public class UserData {
 
-   private static final String [] userNames = {
-           "Epancha Vitaliy"
-   };
+   private enum userNames {
+//      Epancha Vitaliy,
+       ghlg,
+       hgfil,
+   }
 
    private static final String[] loginNames = {
             "Vitalik",
@@ -21,7 +23,7 @@ public class UserData {
             "8020001122"
     };
 
-    private static final String [] password = {
+    private static final String [] passwords = {
             "6179c5cef8",
             "20101988"
     };
@@ -29,8 +31,8 @@ public class UserData {
     public static String[] getBranchNames() { return BranchNames; }
     public static String[] getEmailNames() { return emailNames; }
     public static String[] getKenshiNumber() { return kenshiNumber; }
-    public static String[]getLoginNames() { return loginNames; }
-    public static String[]getPassword() { return password; }
+    public static String[] getLoginNames() { return loginNames; }
+    public static String[] getPasswords() { return passwords; }
     public static String[] getUserNames() { return userNames; }
 
 

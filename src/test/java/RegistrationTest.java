@@ -8,18 +8,15 @@ public class RegistrationTest extends BaseTest {
     public void registration(){
         RegistrationPage registrationPage = new RegistrationPage();
         HomePage homePage = new HomePage(driver);
-       homePage.clickElement(homePage.getBtnMap().get("RegistrationBTN"));
-       // driver.findElement(By.id("form-login-register")).click();
-        registrationPage.sendKeys(registrationPage.getRegistrationFields().get("LoginField"), UserData.getUserNames(0));
-//        driver.findElement(By.id("name")).sendKeys("Epancha Vitaliy");
-
-        driver.findElement(By.id("email")).sendKeys("zayath88@gmail.com");
-        driver.findElement(By.id("cb_filial")).sendKeys("KITA ODESSA");
-        driver.findElement(By.id("cb_kenshi")).sendKeys("8020001122");
-        driver.findElement(By.id("username")).sendKeys("Vitalik");
-        driver.findElement(By.id("password")).sendKeys("6179c5cef8");
-        driver.findElement(By.id("password__verify")).sendKeys("6179c5cef8");
-        driver.findElement(By.cssSelector(".cbRegistrationSubmit")).click();
+        homePage.clickElement(homePage.getBtnMap().get("RegistrationBTN"));
+        registrationPage.sendKeys(registrationPage.getRegistrationFields().get("LoginField"), UserData.getUserNames()[0]);
+        registrationPage.sendKeys(registrationPage.getRegistrationFields().get("EmailField"), UserData.getEmailNames()[0]);
+        registrationPage.sendKeys(registrationPage.getRegistrationFields().get("NameOfBranchField"), UserData.getBranchNames()[0]);
+        registrationPage.sendKeys(registrationPage.getRegistrationFields().get("KenshiNumberField"), UserData.getKenshiNumber()[0]);
+        registrationPage.sendKeys(registrationPage.getRegistrationFields().get("UserLoginField"), UserData.getLoginNames()[0]);
+        registrationPage.sendKeys(registrationPage.getRegistrationFields().get("UserPassField"), UserData.getPasswords()[0]);
+        registrationPage.sendKeys(registrationPage.getRegistrationFields().get("UserVerifyPassField"), UserData.getPasswords()[0]);
+        registrationPage.clickElement(registrationPage.getBTNsRegistration().get("AccessRegBTN"));
         driver.get("http://shorinji-kempo.org.ua/administrator");
         driver.findElement(By.id("mod-login-username")).sendKeys("Виталик");
         driver.findElement(By.id("mod-login-password")).sendKeys("20101988");
