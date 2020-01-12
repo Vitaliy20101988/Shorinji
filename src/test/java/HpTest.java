@@ -49,19 +49,13 @@ public class HpTest extends BaseTest {
         };
     }
 
-    @Test
+   @Test
     public void authorization(){
        HomePage homePage = new HomePage(driver);
-       homePage.sendKeys(homePage.getLoginField(), UserData.getName());
-       homePage.sendKeys(homePage.getPassField(), UserData.getPassword());
+       homePage.sendKeys(homePage.getLoginField(), UserData.getLoginNames(1));
+       homePage.sendKeys(homePage.getPassField(), UserData.getPassword(1));
        homePage.clickElement(homePage.getBtnMap().get("EnterBtn"));
-       
     }
-
-
-
-
-
 
 }
 

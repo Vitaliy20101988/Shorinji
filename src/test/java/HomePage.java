@@ -12,7 +12,6 @@ public class HomePage extends BasePage {
 
 
    public static Map<String, String> URLsMap = Map.ofEntries (
-           entry("baseUrl", "http://shorinji-kempo.org.ua"),
            entry("ShorinjiKempoURL", "http://shorinji-kempo.org.ua/index.php/shorinjikempo"),
            entry("HistoryURL", "http://shorinji-kempo.org.ua/index.php/historysk"),
            entry("LearningProgrammURL", "http://shorinji-kempo.org.ua/index.php/uchebnaya-programma"),
@@ -67,7 +66,8 @@ public class HomePage extends BasePage {
                 entry("CalendarBtn", By.cssSelector(".item-22 > a")),
                 entry("CharterBtn", By.cssSelector(".item-23 > a")),
                 entry("LinksBtn", By.cssSelector(".item-24 > a")),
-                entry("EnterBtn", By.name("Submit"))
+                entry("EnterBtn", By.name("Submit")),
+                entry("RegistrationBTN", By.cssSelector(".cbRegistrationSubmit"))
     );
 
          public static Map<String, By> getBtnMap() {
