@@ -1,3 +1,5 @@
+package parametrs;
+
 public enum UserData {
          USER_NAME_VE("Epancha Vitaliy"),
          LOGIN_NAME_VE("Vitalik"),

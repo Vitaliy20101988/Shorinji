@@ -1,7 +1,8 @@
 import org.openqa.selenium.By;
-import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import pages.HomePage;
+import parametrs.UserData;
 
 
 public class HpTest extends BaseTest {
@@ -53,9 +54,8 @@ public class HpTest extends BaseTest {
     public void authorization(){
        HomePage homePage = new HomePage(driver);
        homePage.autorization(UserData.LOGIN_NAME_VE.getValue(), UserData.PASS_ADMIN.getValue());
-       homePage.assertAutoriz(UserData.LOGIN_NAME_VE.getValue());
     }
-
+    //     TODO write registration with different access levels for test Left Menu and TOP Menu by Users with different access level
 }
 
 

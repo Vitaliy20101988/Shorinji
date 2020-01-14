@@ -1,5 +1,9 @@
+package pages;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import parametrs.UserData;
+
 import java.util.*;
 import static java.util.Map.*;
 
@@ -91,6 +95,7 @@ public class HomePage extends BasePage {
                sendKeys(getLoginField(), login);
                sendKeys(getPassField(), pass);
                clickElement(getBtnMap().get("EnterBtn"));
+               assertAutoriz(UserData.LOGIN_NAME_VE.getValue());
                return this;
           }
 

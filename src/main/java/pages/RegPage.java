@@ -1,15 +1,18 @@
+package pages;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import parametrs.UserData;
 
 import java.util.*;
 import static java.util.Map.*;
 
 
-public class RegistrationPage extends BasePage {
+public class RegPage extends BasePage {
 
     private String adminURL = "https://shorinji-kempo.org.ua/administrator";
 
-    public RegistrationPage(WebDriver driver){
+    public RegPage(WebDriver driver){
         super (driver, 10);
     }
 
@@ -54,11 +57,11 @@ public class RegistrationPage extends BasePage {
 
     //  Open Admin Page//
 
-    public RegistrationPage goToAdmin (){
+    public RegPage goToAdmin (){
         driver.get(adminURL);
         return this;}
 
-    public RegistrationPage fillRegForm(String userName, String email, String branchName, String kenshiNum, String login, String pass){
+    public RegPage fillRegForm(String userName, String email, String branchName, String kenshiNum, String login, String pass){
         sendKeys(getRegistrationFields().get("LoginField"), userName);
         sendKeys(getRegistrationFields().get("EmailField"), email);
         sendKeys(getRegistrationFields().get("NameOfBranchField"), branchName);
@@ -71,7 +74,7 @@ public class RegistrationPage extends BasePage {
     }
 
 
-    public RegistrationPage AuthAdmin (){
+    public RegPage AuthAdmin (){
         goToAdmin();
         sendKeys(getAdminSelectors().get("LoginField"), UserData.LOGIN_ADMIN.getValue());
         sendKeys(getAdminSelectors().get("PassField"), UserData.PASS_ADMIN.getValue());
@@ -79,7 +82,7 @@ public class RegistrationPage extends BasePage {
         return this;
     }
 
-    public RegistrationPage findUserInUserAdminPage(String value){
+    public RegPage findUserInUserAdminPage(String value){
         clickElement(getAdminSelectors().get("CommunityBuilder"));
         clickElement(getAdminSelectors().get("UserManager"));
         sendKeys(getAdminSelectors().get("SearchField"), value);
@@ -87,7 +90,7 @@ public class RegistrationPage extends BasePage {
         return this;
     }
 
-    public RegistrationPage acceptReg(By elementBy){
+    public RegPage confirmReg(By elementBy){
         clickElement(elementBy);
         select(By.id("block"), "0");
         select(By.id("approved"), "1");
@@ -95,7 +98,7 @@ public class RegistrationPage extends BasePage {
         return this;
     }
 
-    public RegistrationPage deleteUser(){
+    public RegPage deleteUser(){
         clickElement(getAdminSelectors().get("CheckBoxBTN"));
         clickElement(getAdminSelectors().get("DeleteBTN"));
         AllertAccept();
