@@ -21,10 +21,10 @@ public class BaseTest {
     }
 
 
-//   @AfterMethod
-//    public void teardown(){
-//       driver.quit();
-//    }
+   @AfterMethod
+    public void teardown(){
+       driver.quit();
+    }
 
     //Open Home Page//
     public BaseTest goToSK() {

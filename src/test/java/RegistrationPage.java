@@ -44,7 +44,8 @@ public class RegistrationPage extends BasePage {
       entry("ApprovedBTN", By.id("approved")),
       entry("NameBTN", By.linkText("Epancha Vitaliy")),
       entry("SaveAndCloseBTN", By.cssSelector("#toolbar-save > .btn")),
-      entry("CheckBoxBTN", By.id("cbusersbrowserid0"))
+      entry("CheckBoxBTN", By.id("cbusersbrowserid0")),
+      entry("DeleteBTN", By.xpath("//div[@id='toolbar-delete']/button"))
 
     );
     public static Map<String, By> getAdminSelectors() {return adminSelectors;}
@@ -52,10 +53,28 @@ public class RegistrationPage extends BasePage {
 
 
     //  Open Admin Page//
+
     public RegistrationPage goToAdmin (){
         driver.get(adminURL);
-        sendKeys(getAdminSelectors().get("LoginField"), UserData.VitLogin.getValue());
-        sendKeys(getAdminSelectors().get("PassField"), UserData.VitPass.getValue());
+        return this;}
+
+    public RegistrationPage fillRegForm(String userName, String email, String branchName, String kenshiNum, String login, String pass){
+        sendKeys(getRegistrationFields().get("LoginField"), userName);
+        sendKeys(getRegistrationFields().get("EmailField"), email);
+        sendKeys(getRegistrationFields().get("NameOfBranchField"), branchName);
+        sendKeys(getRegistrationFields().get("KenshiNumberField"), kenshiNum);
+        sendKeys(getRegistrationFields().get("UserLoginField"), login);
+        sendKeys(getRegistrationFields().get("UserPassField"), pass);
+        sendKeys(getRegistrationFields().get("UserVerifyPassField"), pass);
+        clickElement(getBTNsRegistration().get("AccessRegBTN"));
+        return this;
+    }
+
+
+    public RegistrationPage AuthAdmin (){
+        goToAdmin();
+        sendKeys(getAdminSelectors().get("LoginField"), UserData.LOGIN_ADMIN.getValue());
+        sendKeys(getAdminSelectors().get("PassField"), UserData.PASS_ADMIN.getValue());
         clickElement(getAdminSelectors().get("AccessLoginBTN"));
         return this;
     }
@@ -76,12 +95,10 @@ public class RegistrationPage extends BasePage {
         return this;
     }
 
-    public RegistrationPage deleteUser(String value){
-        clickElement(getAdminSelectors().get("CommunityBuilder"));
-        clickElement(getAdminSelectors().get("UserManager"));
-        sendKeys(getAdminSelectors().get("SearchField"), value);
-        clickElement(getAdminSelectors().get("SearchBTN"));
+    public RegistrationPage deleteUser(){
         clickElement(getAdminSelectors().get("CheckBoxBTN"));
+        clickElement(getAdminSelectors().get("DeleteBTN"));
+        AllertAccept();
         return this;
     }
 }

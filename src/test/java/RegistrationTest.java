@@ -8,25 +8,16 @@ public class RegistrationTest extends BaseTest {
         RegistrationPage registrationPage = new RegistrationPage(driver);
         HomePage homePage = new HomePage(driver);
         homePage.clickElement(homePage.getBtnMap().get("RegistrationBTN"));
-        registrationPage.sendKeys(registrationPage.getRegistrationFields().get("LoginField"), UserData.UserNameEpancha_Vitaliy.getValue());
-        registrationPage.sendKeys(registrationPage.getRegistrationFields().get("EmailField"), UserData.VitalikEmail.getValue());
-        registrationPage.sendKeys(registrationPage.getRegistrationFields().get("NameOfBranchField"), UserData.KitaBranch.getValue());
-        registrationPage.sendKeys(registrationPage.getRegistrationFields().get("KenshiNumberField"), UserData.VitalikNumber.getValue());
-        registrationPage.sendKeys(registrationPage.getRegistrationFields().get("UserLoginField"), UserData.VitalikLogin.getValue());
-        registrationPage.sendKeys(registrationPage.getRegistrationFields().get("UserPassField"), UserData.VitalikPass.getValue());
-        registrationPage.sendKeys(registrationPage.getRegistrationFields().get("UserVerifyPassField"), UserData.VitalikPass.getValue());
-        registrationPage.clickElement(registrationPage.getBTNsRegistration().get("AccessRegBTN"));
-        registrationPage.goToAdmin();
-        registrationPage.findUserInUserAdminPage(UserData.VitalikEmail.getValue());
+        registrationPage.fillRegForm(UserData.USER_NAME_VE.getValue(), UserData.EMAIL_VE.getValue(),UserData.BRANCH_NAME.getValue(),
+                UserData.KENSHI_NUMBER_VE.getValue(), UserData.LOGIN_NAME_VE.getValue(),UserData.PASS_VE.getValue());
+        registrationPage.AuthAdmin ();
+        registrationPage.findUserInUserAdminPage(UserData.EMAIL_VE.getValue());
         registrationPage.acceptReg(registrationPage.getAdminSelectors().get("NameBTN"));
         goToSK();
-        homePage.autorization(UserData.VitalikLogin.getValue(), UserData.VitalikPass.getValue());
-        homePage.assertAutoriz(UserData.VitalikLogin.getValue());
+        homePage.autorization(UserData.LOGIN_NAME_VE.getValue(), UserData.PASS_VE.getValue());
+        homePage.assertAutoriz(UserData.LOGIN_NAME_VE.getValue());
         registrationPage.goToAdmin();
-//        registrationPage.findUserInUserAdminPage(UserData.VitalikEmail.getValue());
-//        registrationPage.deleteUser(UserData.VitalikEmail.getValue());
-
-
-
+        registrationPage.findUserInUserAdminPage(UserData.EMAIL_VE.getValue());
+        registrationPage.deleteUser();
     }
 }

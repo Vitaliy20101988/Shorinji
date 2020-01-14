@@ -12,6 +12,7 @@ public class HomePage extends BasePage {
 
 
    public static Map<String, String> URLsMap = Map.ofEntries (
+
            entry("ShorinjiKempoURL", "https://shorinji-kempo.org.ua/shorinjikempo"),
            entry("HistoryURL", "https://shorinji-kempo.org.ua/historysk"),
            entry("LearningProgrammURL", "https://shorinji-kempo.org.ua/uchebnaya-programma"),

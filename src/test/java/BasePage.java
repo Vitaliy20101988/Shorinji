@@ -1,4 +1,5 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -17,13 +18,12 @@ public class BasePage {
 
     }
 
-    public BasePage() {
-    }
+    public String getDomain(){return baseURL;}
 
 
     //Open Home Page//
     public BasePage goToSK() {
-        driver.get(baseURL);
+        getDomain ();
         return this;
     }
 
@@ -55,4 +55,14 @@ public class BasePage {
     public void select(By elementBy, String value) {
         Select select = new Select(driver.findElement(elementBy));
         select.selectByValue(value); }
-}
+
+
+        protected void AllertAccept() {
+            try {
+                driver.switchTo().alert().accept();
+            } catch (NoAlertPresentException e) {
+                // Do nothing. No Allert
+            }
+        }
+    }
+
