@@ -52,9 +52,8 @@ public class HpTest extends BaseTest {
    @Test
     public void authorization(){
        HomePage homePage = new HomePage(driver);
-       homePage.sendKeys(homePage.getLoginField(), UserData.getLoginNames()[1]);
-       homePage.sendKeys(homePage.getPassField(), UserData.getPasswords()[1]);
-       homePage.clickElement(homePage.getBtnMap().get("EnterBtn"));
+       homePage.autorization(UserData.VitLogin.getValue(), UserData.VitPass.getValue());
+       homePage.assertAutoriz(UserData.VitLogin.getValue());
     }
 
 }

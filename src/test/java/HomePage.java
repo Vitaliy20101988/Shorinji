@@ -67,7 +67,8 @@ public class HomePage extends BasePage {
                 entry("CharterBtn", By.cssSelector(".item-23 > a")),
                 entry("LinksBtn", By.cssSelector(".item-24 > a")),
                 entry("EnterBtn", By.name("Submit")),
-                entry("RegistrationBTN", By.cssSelector("#form-login-register > a"))
+                entry("RegistrationBTN", By.cssSelector("#form-login-register > a")),
+                entry("Privet", By.cssSelector(".login-greeting.cb_template.cb_template_default"))
     );
 
          public static Map<String, By> getBtnMap() {
@@ -85,9 +86,17 @@ public class HomePage extends BasePage {
            }
 
 
+          public HomePage autorization(String login, String pass){
+               sendKeys(getLoginField(), login);
+               sendKeys(getPassField(), pass);
+               clickElement(getBtnMap().get("EnterBtn"));
+               return this;
+          }
 
-
-
+    public HomePage assertAutoriz(String loginName){
+        assertTextContains(getBtnMap().get("Privet"), "Приветствуем Вас, " + loginName);
+        return this;
+    }
 }
 
 

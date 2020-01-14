@@ -14,7 +14,6 @@ public class BaseTest {
     @BeforeMethod
 
     public void setup(){
-
         System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -26,4 +25,10 @@ public class BaseTest {
 //    public void teardown(){
 //       driver.quit();
 //    }
+
+    //Open Home Page//
+    public BaseTest goToSK() {
+        driver.get(baseURL);
+        return this;
+    }
 }

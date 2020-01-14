@@ -1,40 +1,20 @@
-public class UserData {
+public enum UserData {
+         UserNameEpancha_Vitaliy("Epancha Vitaliy"),
+         VitalikLogin("Vitalik"),
+         VitLogin("Виталик"),
+         VitalikEmail("zayath88@gmail.com"),
+         KitaBranch("KITA ODESSA"),
+         VitalikNumber("8020001122"),
+         VitalikPass("6179c5cef8"),
+         GREETING_SELECTOR(".login-greeting.cb_template.cb_template_default"),
+         VitPass("20101988");
 
-   private enum userNames {
-//      Epancha Vitaliy,
-       ghlg,
-       hgfil,
-   }
 
-   private static final String[] loginNames = {
-            "Vitalik",
-            "Виталик"
+
+        private String value;
+
+        UserData(String value) { this.value = value; }
+
+        public String getValue() { return value; }
     };
-
-    private static final String [] emailNames = {
-            "zayath88@gmail.com"
-    };
-
-    private static final String [] BranchNames = {
-            "KITA ODESSA"
-    };
-
-    private static final String [] kenshiNumber = {
-            "8020001122"
-    };
-
-    private static final String [] passwords = {
-            "6179c5cef8",
-            "20101988"
-    };
-
-    public static String[] getBranchNames() { return BranchNames; }
-    public static String[] getEmailNames() { return emailNames; }
-    public static String[] getKenshiNumber() { return kenshiNumber; }
-    public static String[] getLoginNames() { return loginNames; }
-    public static String[] getPasswords() { return passwords; }
-    public static String[] getUserNames() { return userNames; }
-
-
-}
 
