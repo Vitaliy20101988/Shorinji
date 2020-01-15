@@ -85,6 +85,7 @@ public class RegPage extends BasePage {
     public RegPage findUserInUserAdminPage(String value){
         clickElement(getAdminSelectors().get("CommunityBuilder"));
         clickElement(getAdminSelectors().get("UserManager"));
+        clearField(getAdminSelectors().get("SearchField"));
         sendKeys(getAdminSelectors().get("SearchField"), value);
         clickElement(getAdminSelectors().get("SearchBTN"));
         return this;

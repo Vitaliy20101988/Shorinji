@@ -53,7 +53,7 @@ public class HpTest extends BaseTest {
    @Test
     public void authorization(){
        HomePage homePage = new HomePage(driver);
-       homePage.autorization(UserData.LOGIN_NAME_VE.getValue(), UserData.PASS_ADMIN.getValue());
+       homePage.autorization(UserData.LOGIN_ADMIN.getValue(), UserData.PASS_ADMIN.getValue());
     }
     //     TODO write registration with different access levels for test Left Menu and TOP Menu by Users with different access level
 }

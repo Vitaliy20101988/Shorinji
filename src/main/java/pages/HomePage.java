@@ -33,7 +33,7 @@ public class HomePage extends BasePage {
            entry("HappyoURL", "https://shorinji-kempo.org.ua/happyo"),
            entry("ShopURL", "https://shorinji-kempo.org.ua/shopsk"),
            entry("PaymentsURL", "https://shorinji-kempo.org.ua/list-of-fees"),
-           entry("MainURL", "https://shorinji-kempo.org.ua"),
+           entry("MainURL", "https://shorinji-kempo.org.ua/"),
            entry("NewsURL", "https://shorinji-kempo.org.ua/news"),
            entry("FederationURL", "https://shorinji-kempo.org.ua/federaciya"),
            entry("BranchesURL", "https://shorinji-kempo.org.ua/branches"),
@@ -95,7 +95,7 @@ public class HomePage extends BasePage {
                sendKeys(getLoginField(), login);
                sendKeys(getPassField(), pass);
                clickElement(getBtnMap().get("EnterBtn"));
-               assertAutoriz(UserData.LOGIN_NAME_VE.getValue());
+               assertAutoriz(login);
                return this;
           }
 
