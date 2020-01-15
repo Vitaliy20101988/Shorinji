@@ -30,4 +30,5 @@ public class BaseTest {
         driver.get(baseURL);
         return this;
     }
+    System.out.println
 }

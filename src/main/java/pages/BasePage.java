@@ -59,12 +59,8 @@ public class BasePage {
         select.selectByValue(value); }
 
 
-        protected void AllertAccept() {
-            try {
-                driver.switchTo().alert().accept();
-            } catch (NoAlertPresentException e) {
-                // Do nothing. No Allert
-            }
-        }
+        public void AllertAccept() { driver.switchTo().alert().accept(); }
+
     }
+
 
