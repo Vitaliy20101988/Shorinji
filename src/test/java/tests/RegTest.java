@@ -1,7 +1,10 @@
+package tests;
+
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.RegPage;
 import parametrs.UserData;
+import tests.BaseTest;
 
 
 public class RegTest extends BaseTest {

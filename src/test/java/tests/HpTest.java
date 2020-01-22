@@ -1,14 +1,22 @@
+package tests;
+
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
 import org.openqa.selenium.By;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import parametrs.UserData;
+import tests.BaseTest;
 
 
 public class HpTest extends BaseTest {
 
 
     @Test(description = "Open pages from Left Menu", dataProvider = "UnauthorizedLeftMenu")
+    @Severity(SeverityLevel.NORMAL)
+    @Story("User open Home Page and click button from Left Menu")
     public void verifyLeftMenuLink(By LeftMenuBtn, String LeftMenuURL) {
         HomePage homePage = new HomePage(driver);
         homePage.clickElement(LeftMenuBtn);
@@ -31,6 +39,8 @@ public class HpTest extends BaseTest {
     }
 
     @Test(description = "Open pages from Top Menu", dataProvider = "UnauthorizedTopMenu")
+    @Severity(SeverityLevel.NORMAL)
+    @Story("User open Home Page and click button from TOP Menu")
     public void verifyTopMenuLink(By TopMenuBtn, String TopMenuURL){
         HomePage homePage = new HomePage(driver);
         homePage.clickElement(TopMenuBtn);
@@ -51,6 +61,8 @@ public class HpTest extends BaseTest {
     }
 
    @Test
+   @Severity(SeverityLevel.CRITICAL)
+   @Story("Successful login with valid phone number and password")
     public void authorization(){
        HomePage homePage = new HomePage(driver);
        homePage.autorization(UserData.LOGIN_NAME_VE.getValue(), UserData.PASS_ADMIN.getValue());

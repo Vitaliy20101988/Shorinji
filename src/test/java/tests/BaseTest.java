@@ -1,3 +1,5 @@
+package tests;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -19,6 +21,10 @@ public class BaseTest {
         driver.get(baseURL);
     }
 
+    public WebDriver getDriver() {
+        return driver;
+    }
+
 
    @AfterMethod
     public void teardown(){
@@ -30,5 +36,4 @@ public class BaseTest {
         driver.get(baseURL);
         return this;
     }
-    System.out.println
 }
