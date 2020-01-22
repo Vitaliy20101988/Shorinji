@@ -61,6 +61,11 @@ public class BasePage {
 
         public void AllertAccept() { driver.switchTo().alert().accept(); }
 
+
+        public void clearField(By elementBy){
+        driver.findElement(elementBy).clear();
+        }
+
     }
 
 

@@ -95,7 +95,7 @@ public class HomePage extends BasePage {
                sendKeys(getLoginField(), login);
                sendKeys(getPassField(), pass);
                clickElement(getBtnMap().get("EnterBtn"));
-               assertAutoriz(UserData.LOGIN_NAME_VE.getValue());
+               assertAutoriz(login);
                return this;
           }
 
