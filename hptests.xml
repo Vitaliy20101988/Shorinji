@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="everyday">
+    <test name="LeftMenu">
+        <classes>
+            <class name="tests.HpTest">
+                <methods>
+                    <include name="verifyLeftMenuLink"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="TOPMenu">
+        <classes>
+            <class name="tests.HpTest">
+                <methods>
+                    <include name="TopMenuData"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

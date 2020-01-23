@@ -1,21 +1,24 @@
 package tests;
 
-import io.qameta.allure.Severity;
-import io.qameta.allure.SeverityLevel;
-import io.qameta.allure.Story;
+import io.qameta.allure.*;
+import listeners.ScreenshotListener;
 import org.openqa.selenium.By;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import parametrs.UserData;
 import tests.BaseTest;
 
-
+@Listeners({ScreenshotListener.class})
+@Epic(("Regression Tests"))
+@Feature("Menu Tests")
 public class HpTest extends BaseTest {
 
 
-    @Test(description = "Open pages from Left Menu", dataProvider = "UnauthorizedLeftMenu")
+    @Test(priority = 0, description = "Open pages from Left Menu", dataProvider = "UnauthorizedLeftMenu")
     @Severity(SeverityLevel.NORMAL)
+    @Description("Open pages from Left Menu")
     @Story("User open Home Page and click button from Left Menu")
     public void verifyLeftMenuLink(By LeftMenuBtn, String LeftMenuURL) {
         HomePage homePage = new HomePage(driver);
@@ -38,8 +41,9 @@ public class HpTest extends BaseTest {
         };
     }
 
-    @Test(description = "Open pages from Top Menu", dataProvider = "UnauthorizedTopMenu")
+    @Test(priority = 0, description = "Open pages from Top Menu", dataProvider = "UnauthorizedTopMenu")
     @Severity(SeverityLevel.NORMAL)
+    @Description("Open pages from Top Menu")
     @Story("User open Home Page and click button from TOP Menu")
     public void verifyTopMenuLink(By TopMenuBtn, String TopMenuURL){
         HomePage homePage = new HomePage(driver);
@@ -60,8 +64,9 @@ public class HpTest extends BaseTest {
         };
     }
 
-   @Test
+   @Test(priority = 0, description = "Verify Admin user login")
    @Severity(SeverityLevel.CRITICAL)
+   @Description("Login User Admin")
    @Story("Successful login with valid phone number and password")
     public void authorization(){
        HomePage homePage = new HomePage(driver);

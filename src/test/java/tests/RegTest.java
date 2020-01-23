@@ -1,5 +1,8 @@
 package tests;
 
+import io.qameta.allure.*;
+import listeners.ScreenshotListener;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.RegPage;
@@ -7,11 +10,17 @@ import parametrs.UserData;
 import tests.BaseTest;
 
 
+@Listeners({ScreenshotListener.class})
+@Epic(("Regression Tests"))
+@Feature("Menu Tests")
 public class RegTest extends BaseTest {
 
    // TODO write method which will check that user is already registered, and after this test will delete user and regitrated one more time again
 
-    @Test
+    @Test(priority = 0, description = "Verify user Sign Up")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("Successful register with valid phone number and password")
+    @Description("User can register with invalid data")
     public void registration() throws InterruptedException {
         RegPage regPage = new RegPage(driver);
         HomePage homePage = new HomePage(driver);
