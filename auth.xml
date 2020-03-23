@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<auth>
+    <step1>
+        <action>openUri</action>
+        <params>https://shorinji-kempo.org.ua</params>
+        <description>open_base_uri</description>
+    </step1>
+    <step2>
+        <action>setValue</action>
+        <params>
+            <selector>modlgn-username</selector>
+            <value>Виталик</value>
+        </params>
+        <description>setValueInInputFieldLogin</description>
+    </step2>
+    <step3>
+        <action>setValue</action>
+        <params>
+            <selector>modlgn-passwd</selector>
+            <value>20101988</value>
+        </params>
+        <description>setValueInInputFieldPass</description>
+    </step3>
+    <step4>
+        <action>clickBtn</action>
+        <params>
+            <selector>Submit</selector>
+        </params>
+        <description>pressBtnEnter</description>
+    </step4>
+
+</auth>

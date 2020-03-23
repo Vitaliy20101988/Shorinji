@@ -16,6 +16,8 @@ public class RegPage extends BasePage {
         super (driver, 10);
     }
 
+
+
     public static Map<String, By> BTNsRegistration = Map.ofEntries(
             entry("AccessRegBTN", By.cssSelector(".cbRegistrationSubmit"))
     );

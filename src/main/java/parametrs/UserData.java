@@ -8,7 +8,11 @@ public enum UserData {
          BRANCH_NAME("KITA ODESSA"),
          KENSHI_NUMBER_VE("8020001122"),
          PASS_VE("6179c5cef8"),
-         PASS_ADMIN("20101988");
+         PASS_ADMIN("20101988"),
+         KENSHI_LOGIN("KenshiTest"),
+         MONSHINTO_LOGIN("MonshintoTest"),
+         BRANCH_MASTER_TEST("BranchMasterTest"),
+         TEST_PASS("Test123456");
 
 
          private String value;

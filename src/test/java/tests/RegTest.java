@@ -1,5 +1,4 @@
 package tests;
-
 import io.qameta.allure.*;
 import listeners.ScreenshotListener;
 import org.testng.annotations.Listeners;
@@ -7,8 +6,6 @@ import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.RegPage;
 import parametrs.UserData;
-import tests.BaseTest;
-
 
 @Listeners({ScreenshotListener.class})
 @Epic(("Regression Tests"))

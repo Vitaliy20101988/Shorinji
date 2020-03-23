@@ -66,6 +66,16 @@ public class BasePage {
         driver.findElement(elementBy).clear();
         }
 
+       public boolean ElementPresent (By elementBy) {
+        try {
+            driver.findElement(elementBy);
+            return true;
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+            return false;
+        }
     }
+
+    }
+
 
 
