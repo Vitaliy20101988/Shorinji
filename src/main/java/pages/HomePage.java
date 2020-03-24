@@ -13,7 +13,7 @@ public class HomePage extends BasePage {
     }
 
 
-   public static Map<String, String> URLsMap = Map.ofEntries (
+   private static Map<String, String> URLsMap = Map.ofEntries (
 
            entry("ShorinjiKempoURL", "https://shorinji-kempo.org.ua/shorinjikempo"),
            entry("HistoryURL", "https://shorinji-kempo.org.ua/historysk"),
@@ -40,8 +40,7 @@ public class HomePage extends BasePage {
            entry("CalendarURL", "https://shorinji-kempo.org.ua/calendar"),
            entry("CharterURL", "https://shorinji-kempo.org.ua/statutes"),
            entry("LinksURL", "https://shorinji-kempo.org.ua/links"),
-           entry("DocumentsURL", "https://shorinji-kempo.org.ua/documets"),
-           entry("LoginURL", "https://shorinji-kempo.org.ua/cb-login")
+           entry("DocumentsURL", "https://shorinji-kempo.org.ua/documets")
    );
 
          public static Map<String, String> getURLsMap() {
@@ -49,7 +48,7 @@ public class HomePage extends BasePage {
         }
 
 
-        public static Map<String, By> BTNsMap = Map.ofEntries (
+        private static Map<String, By> BTNsMap = Map.ofEntries (
                 entry("ShorinjiKempoBtn", By.cssSelector(".item-25 > a")),
                 entry("HistoryBtn", By.cssSelector(".item-29 > a")),
                 entry("LearningProgrammBtn", By.linkText("Учебная программа")),
@@ -66,7 +65,7 @@ public class HomePage extends BasePage {
                 entry("HappyoBtn", By.linkText("Хаппё")),
                 entry("ShopBtn", By.linkText("Магазин")),
                 entry("PaymentsBtn", By.linkText("Перечень платежей")),
-                entry("LibaryForKenshiBtn", By.linkText("Для Кэнси")),
+                entry("LibaryForKenshiBtn", By.xpath("//*[@id=\"left_s\"]/div[2]/div/ul/li[1]/a")),
                 entry("LibraryForMonshintoBtn", By.linkText("Для Монсинто")),
                 entry("MainBtn", By.cssSelector(".item-41 > a")),
                 entry("NewsBtn", By.cssSelector(".item-18 > a")),
@@ -75,40 +74,13 @@ public class HomePage extends BasePage {
                 entry("CalendarBtn", By.cssSelector(".item-22 > a")),
                 entry("CharterBtn", By.cssSelector(".item-23 > a")),
                 entry("LinksBtn", By.cssSelector(".item-24 > a")),
-                entry("DocumentsBtn", By.cssSelector(".item-157 > a")),
-                entry("EnterBtn", By.name("Submit")),
-                entry("RegistrationBTN", By.cssSelector("#form-login-register > a")),
-                entry("Privet", By.cssSelector(".login-greeting.cb_template.cb_template_default"))
+                entry("DocumentsBtn", By.cssSelector(".item-157 > a"))
     );
 
          public static Map<String, By> getBtnMap() {
                  return BTNsMap;
              }
 
-          private By LoginField = By.id("modlgn-username");
-          private By PassField = By.id("modlgn-passwd");
-
-           public By getLoginField(){
-             return LoginField;
-         }
-           public By getPassField(){
-               return PassField;
-           }
-
-
-          public HomePage autorization(String login, String pass){
-
-               sendKeys(getLoginField(), login);
-               sendKeys(getPassField(), pass);
-               clickElement(getBtnMap().get("EnterBtn"));
-               return this;
-          }
-
-
-    public HomePage assertAutoriz(String loginName){
-        assertTextContains(getBtnMap().get("Privet"), "Приветствуем Вас, " + loginName);
-        return this;
-    }
 
 }
 

@@ -49,6 +49,10 @@ public class BasePage {
         assert text.contains(textPart);
     }
 
+    public void verifyElementDisable(By elementBy){
+        Assert.assertTrue(!ElementPresent(elementBy));
+    }
+
     public String readText(By elementBy) {
         return driver.findElement(elementBy).getText();
     }
