@@ -3,10 +3,10 @@ package tests;
 import io.qameta.allure.*;
 import listeners.ScreenshotListener;
 import org.openqa.selenium.By;
-import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import pages.AuthPage;
 import pages.HomePage;
 import parametrs.UserData;
 
@@ -72,7 +72,8 @@ public class HpTest extends BaseTest {
     @Story("User open Home Page and click button from Left Menu")
     public void verifyLeftMenuLinkAdmin(By LeftMenuBtn, String LeftMenuURL) {
         HomePage homePage = new HomePage(driver);
-        homePage.autorization(UserData.LOGIN_ADMIN.getValue(), UserData.PASS_ADMIN.getValue());
+        AuthPage authPage = new AuthPage(driver);
+        authPage.autorization(UserData.LOGIN_ADMIN.getValue(), UserData.PASS_ADMIN.getValue());
         homePage.clickElement(LeftMenuBtn);
         homePage.AssertEqualURLs(driver.getCurrentUrl(), LeftMenuURL);
     }
@@ -107,7 +108,8 @@ public class HpTest extends BaseTest {
     @Story("User open Home Page and click button from TOP Menu")
     public void verifyTopMenuLinkAdmin(By TopMenuBtn, String TopMenuURL) {
         HomePage homePage = new HomePage(driver);
-        homePage.autorization(UserData.LOGIN_ADMIN.getValue(), UserData.PASS_ADMIN.getValue());
+        AuthPage authPage = new AuthPage(driver);
+        authPage.autorization(UserData.LOGIN_ADMIN.getValue(), UserData.PASS_ADMIN.getValue());
         homePage.clickElement(TopMenuBtn);
         homePage.AssertEqualURLs(driver.getCurrentUrl(), TopMenuURL);
     }
@@ -133,7 +135,8 @@ public class HpTest extends BaseTest {
     @Story("User open Home Page and click button from Left Menu")
     public void verifyLeftMenuLinkKenshi(By LeftMenuBtn, String LeftMenuURL) {
         HomePage homePage = new HomePage(driver);
-        homePage.autorization(UserData.KENSHI_LOGIN.getValue(), UserData.TEST_PASS.getValue());
+        AuthPage authPage = new AuthPage(driver);
+        authPage.autorization(UserData.KENSHI_LOGIN.getValue(), UserData.TEST_PASS.getValue());
         homePage.clickElement(LeftMenuBtn);
         homePage.AssertEqualURLs(driver.getCurrentUrl(), LeftMenuURL);
     }
@@ -165,7 +168,8 @@ public class HpTest extends BaseTest {
     @Story("User open Home Page and click button from TOP Menu")
     public void verifyTopMenuLinkKenshi(By TopMenuBtn, String TopMenuURL) {
         HomePage homePage = new HomePage(driver);
-        homePage.autorization(UserData.KENSHI_LOGIN.getValue(), UserData.TEST_PASS.getValue());
+        AuthPage authPage = new AuthPage(driver);
+        authPage.autorization(UserData.KENSHI_LOGIN.getValue(), UserData.TEST_PASS.getValue());
         homePage.clickElement(TopMenuBtn);
         homePage.AssertEqualURLs(driver.getCurrentUrl(), TopMenuURL);
     }
@@ -191,7 +195,8 @@ public class HpTest extends BaseTest {
     @Story("User open Home Page and click button from Left Menu")
     public void verifyLeftMenuLinkMonshinto(By LeftMenuBtn, String LeftMenuURL) {
         HomePage homePage = new HomePage(driver);
-        homePage.autorization(UserData.MONSHINTO_LOGIN.getValue(), UserData.TEST_PASS.getValue());
+        AuthPage authPage = new AuthPage(driver);
+        authPage.autorization(UserData.MONSHINTO_LOGIN.getValue(), UserData.TEST_PASS.getValue());
         homePage.clickElement(LeftMenuBtn);
         homePage.AssertEqualURLs(driver.getCurrentUrl(), LeftMenuURL);
     }
@@ -224,7 +229,8 @@ public class HpTest extends BaseTest {
     @Story("User open Home Page and click button from TOP Menu")
     public void verifyTopMenuLinkMonshinto(By TopMenuBtn, String TopMenuURL) {
         HomePage homePage = new HomePage(driver);
-        homePage.autorization(UserData.MONSHINTO_LOGIN.getValue(), UserData.TEST_PASS.getValue());
+        AuthPage authPage = new AuthPage(driver);
+        authPage.autorization(UserData.MONSHINTO_LOGIN.getValue(), UserData.TEST_PASS.getValue());
         homePage.clickElement(TopMenuBtn);
         homePage.AssertEqualURLs(driver.getCurrentUrl(), TopMenuURL);
     }
@@ -248,7 +254,8 @@ public class HpTest extends BaseTest {
     @Story("User open Home Page and click button from Left Menu")
     public void verifyLeftMenuLinkABranchMaster(By LeftMenuBtn, String LeftMenuURL) {
         HomePage homePage = new HomePage(driver);
-        homePage.autorization(UserData.BRANCH_MASTER_TEST.getValue(), UserData.TEST_PASS.getValue());
+        AuthPage authPage = new AuthPage(driver);
+        authPage.autorization(UserData.BRANCH_MASTER_TEST.getValue(), UserData.TEST_PASS.getValue());
         homePage.clickElement(LeftMenuBtn);
         homePage.AssertEqualURLs(driver.getCurrentUrl(), LeftMenuURL);
     }
@@ -280,7 +287,8 @@ public class HpTest extends BaseTest {
     @Story("User open Home Page and click button from TOP Menu")
     public void verifyTopMenuLinkBranchMaster(By TopMenuBtn, String TopMenuURL) {
         HomePage homePage = new HomePage(driver);
-        homePage.autorization(UserData.BRANCH_MASTER_TEST.getValue(), UserData.TEST_PASS.getValue());
+        AuthPage authPage = new AuthPage(driver);
+        authPage.autorization(UserData.BRANCH_MASTER_TEST.getValue(), UserData.TEST_PASS.getValue());
         homePage.clickElement(TopMenuBtn);
         homePage.AssertEqualURLs(driver.getCurrentUrl(), TopMenuURL);
     }
@@ -299,113 +307,12 @@ public class HpTest extends BaseTest {
         };
     }
 
-
-
-
-    //Pozitive cases
-    @Test(priority = 0, description = "Verify Admin user login")
-    @Severity(SeverityLevel.CRITICAL)
-    @Description("Login User Admin")
-    @Story("Successful login with valid phone number and password")
-    public void authorization() {
-        HomePage homePage = new HomePage(driver);
-        homePage.autorization(UserData.LOGIN_ADMIN.getValue(), UserData.PASS_ADMIN.getValue());
-        homePage.assertAutoriz(UserData.LOGIN_ADMIN.getValue());
-    }
-
-    //Negative cases
-    @Test(priority = 0, description = "Verify that Admin can not authorize with empty login")
-    @Severity(SeverityLevel.CRITICAL)
-    @Description("Login User with empty login")
-    @Story("User can not authorize with empty login")
-    public void emptyLoginAuthorization() {
-        HomePage homePage = new HomePage(driver);
-        homePage.autorization("", UserData.PASS_ADMIN.getValue());
-        homePage.AssertEqualURLs(driver.getCurrentUrl(), homePage.getURLsMap().get("LoginURL"));
-    }
-
-    @Test(priority = 0, description = "Verify that Admin can not authorize with empty password")
-    @Severity(SeverityLevel.CRITICAL)
-    @Description("Login User with empty password")
-    @Story("User can not authorize with empty password")
-    public void emptyPassAuthorization() {
-        HomePage homePage = new HomePage(driver);
-        homePage.autorization(UserData.LOGIN_ADMIN.getValue(), "");
-        homePage.AssertEqualURLs(driver.getCurrentUrl(), homePage.getURLsMap().get("LoginURL"));
-    }
-
-    @Test(priority = 0, description = "Verify that system correctly clarify Up register")
-    @Severity(SeverityLevel.CRITICAL)
-    @Description("Login User with Up register password")
-    @Story("User can not authorize with Up register password")
-    public void UpRegisterPassAuthorization() {
-        HomePage homePage = new HomePage(driver);
-        homePage.autorization(UserData. BRANCH_MASTER_TEST.getValue(), "TEST123456");
-        homePage.AssertEqualURLs(driver.getCurrentUrl(), homePage.getURLsMap().get("LoginURL"));
-    }
-
-    @Test(priority = 0, description = "Verify that system correctly clarify down register")
-    @Severity(SeverityLevel.CRITICAL)
-    @Description("Login User with down register password")
-    @Story("User can not authorize with down register password")
-    public void DownRegisterPassAuthorization() {
-        HomePage homePage = new HomePage(driver);
-        homePage.autorization(UserData. BRANCH_MASTER_TEST.getValue(), "test123456");
-        homePage.AssertEqualURLs(driver.getCurrentUrl(), homePage.getURLsMap().get("LoginURL"));
-    }
-
-    @Test(priority = 0, description = "Verify that Admin can not authorize with empty login and password")
-    @Severity(SeverityLevel.CRITICAL)
-    @Description("Login User with empty login and password")
-    @Story("User can not authorize with empty password")
-    public void emptyLoginAndPassAuthorization() {
-        HomePage homePage = new HomePage(driver);
-        homePage.autorization("", "");
-        homePage.AssertEqualURLs(driver.getCurrentUrl(), homePage.getURLsMap().get("LoginURL"));
-    }
-
-    @Test(priority = 0, description = "Verify that Admin can not authorize with wrong password")
-    @Severity(SeverityLevel.CRITICAL)
-    @Description("Login User with wrong password")
-    @Story("User can not authorize with wrong password")
-    public void invalidPassAuthorization() {
-        HomePage homePage = new HomePage(driver);
-        homePage.autorization(UserData.LOGIN_ADMIN.getValue(), "0 0");
-        homePage.AssertEqualURLs(driver.getCurrentUrl(), homePage.getURLsMap().get("LoginURL"));
-    }
-
-    @Test(priority = 0, description = "Verify that Admin can not authorize with wrong login")
-    @Severity(SeverityLevel.CRITICAL)
-    @Description("Login User with wrong login")
-    @Story("User can not authorize with wrong login")
-    public void invalidLoginAuthorization() {
-        HomePage homePage = new HomePage(driver);
-        homePage.autorization("Витали", UserData.PASS_ADMIN.getValue());
-        homePage.AssertEqualURLs(driver.getCurrentUrl(), homePage.getURLsMap().get("LoginURL"));
-    }
-
-
+    //negative cases
     @Test
     public void verifyTopMenuLinkMons() {
         HomePage homePage = new HomePage(driver);
-        homePage.autorization(UserData.MONSHINTO_LOGIN.getValue(), UserData.TEST_PASS.getValue());
-        if(homePage.ElementPresent(By.linkText("Документы"))){
-          Assert.assertFalse(false);
-        }else
-            Assert.assertTrue(true);
+        AuthPage authPage = new AuthPage(driver);
+        authPage.autorization(UserData.MONSHINTO_LOGIN.getValue(), UserData.TEST_PASS.getValue());
+        homePage.verifyElementDisable(HomePage.getBtnMap().get("DocumentsBtn"));
         }
-
-
-
-
-
-
-
-
-
-    //     TODO write registration with different access levels for test Left Menu and TOP Menu by Users with different access level
-
-
-
-
 }

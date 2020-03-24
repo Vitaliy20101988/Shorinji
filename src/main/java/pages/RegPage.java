@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import parametrs.UserData;
@@ -8,12 +9,12 @@ import java.util.*;
 import static java.util.Map.*;
 
 
-public class RegPage extends BasePage {
+public class RegPage extends AuthRegModule {
 
     private String adminURL = "https://shorinji-kempo.org.ua/administrator";
 
     public RegPage(WebDriver driver){
-        super (driver, 10);
+        super (driver);
     }
 
 
@@ -63,6 +64,7 @@ public class RegPage extends BasePage {
         driver.get(adminURL);
         return this;}
 
+    @Step("write registration form")
     public RegPage fillRegForm(String userName, String email, String branchName, String kenshiNum, String login, String pass){
         sendKeys(getRegistrationFields().get("LoginField"), userName);
         sendKeys(getRegistrationFields().get("EmailField"), email);
