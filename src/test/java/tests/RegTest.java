@@ -8,6 +8,8 @@ import pages.AuthRegModule;
 import pages.RegPage;
 import parametrs.UserData;
 
+import java.util.Map;
+
 @Listeners({ScreenshotListener.class})
 @Epic(("Regression Tests"))
 @Feature("Menu Tests")
@@ -21,10 +23,9 @@ public class RegTest extends BaseTest {
     @Description("User can register with invalid data")
     public void registration() throws InterruptedException {
         RegPage regPage = new RegPage(driver);
-//        HomePage homePage = new HomePage(driver);
         AuthPage authPage = new AuthPage(driver);
         AuthRegModule authRegModule = new AuthRegModule(driver);
-        authRegModule.openRegPage();
+        authRegModule.openPage("RegisterBTN");
         regPage.fillRegForm(UserData.USER_NAME_VE.getValue(), UserData.EMAIL_VE.getValue(),UserData.BRANCH_NAME.getValue(),
                 UserData.KENSHI_NUMBER_VE.getValue(), UserData.LOGIN_NAME_VE.getValue(),UserData.PASS_VE.getValue());
         regPage.AuthAdmin ();

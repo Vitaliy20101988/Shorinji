@@ -1,26 +1,16 @@
 package pages;
-<<<<<<< HEAD
 
-import org.openqa.selenium.WebDriver;
-
-public class AuthRegModule extends BasePage {
-
-    public AuthRegModule(WebDriver driver){ super (driver, 10); }
-
-
-
-=======
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
 import java.util.Map;
+
 import static java.util.Map.entry;
 
 public class AuthRegModule extends BasePage {
 
-    public AuthRegModule(WebDriver driver) {
-        super(driver, 10);
-    }
+    public AuthRegModule(WebDriver driver){ super (driver, 10); }
 
     private static Map<String, By> BTNsMap = Map.ofEntries(
             entry("RegisterBTN", By.id("form-login-register")),
@@ -40,8 +30,8 @@ public class AuthRegModule extends BasePage {
     }
 
     @Step("open register page")
-    public void openRegPage (){
-        clickElement(getBTNsMap().get("RegistrationBTN"));
+    public AuthRegModule openPage (String elementBy){
+        clickElement(getBTNsMap().get(elementBy));
+        return  this;
     }
->>>>>>> 143d920d3a7af21fd639cf87efdb532e332de8e0
 }
